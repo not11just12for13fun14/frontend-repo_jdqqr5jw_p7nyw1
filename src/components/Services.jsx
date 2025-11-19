@@ -22,17 +22,22 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-14">
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">What we can book for you</h2>
-        <p className="mt-2 text-slate-600">Everything routed through one quick WhatsApp chat.</p>
+    <section className="mx-auto max-w-7xl px-6 py-16" id="services">
+      <div className="mb-10 text-center">
+        <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">What we can book for you</h2>
+        <p className="mx-auto mt-3 max-w-2xl text-slate-600">
+          One friendly chat for everything—fast, clear options and easy confirmations.
+        </p>
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {services.map(({ icon: Icon, title, desc }) => (
-          <div key={title} className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-md">
+          <div
+            key={title}
+            className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+          >
             <div className="flex items-center gap-3">
-              <div className="rounded-xl bg-emerald-50 p-3 text-emerald-600">
+              <div className="rounded-xl bg-gradient-to-tr from-emerald-100 to-teal-100 p-3 text-emerald-700">
                 <Icon className="h-6 w-6" />
               </div>
               <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
@@ -42,9 +47,9 @@ export default function Services() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center rounded-lg bg-emerald-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-emerald-700"
+              className="mt-5 inline-flex items-center rounded-xl bg-emerald-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-emerald-700"
             >
-              <MessageCircle className="mr-2 h-4 w-4" /> Chat to Book
+              <MessageCircle className="mr-2 h-4 w-4" /> Chat to book
             </a>
           </div>
         ))}
